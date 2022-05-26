@@ -16,8 +16,6 @@ import random
 from tkinter.ttk import Progressbar
 from tkinter.messagebox import *
 import time
-from turtle import bgcolor
-from xml.etree.ElementTree import C14NWriterTarget
 
 #setting GUI warna dan dimensi
 window_x=960
@@ -34,8 +32,8 @@ window = Tk()
 window.resizable(width=False, height=False)
 
 #background UI
-bgimage = PhotoImage(file="Tugas Akhir/bg_image.png")
-bg1 = Label(window, image=bgimage).place(x=0, y=0, relwidth=1, relheight=1)
+bgimage = PhotoImage(file='bg_image.png')
+bg = Label(window, image=bgimage).place(x=0, y=0, relwidth=1, relheight=1)
 
 #push data stack
 def stackPush():
