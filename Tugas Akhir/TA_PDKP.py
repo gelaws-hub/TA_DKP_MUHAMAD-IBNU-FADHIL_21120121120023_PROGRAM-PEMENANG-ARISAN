@@ -19,18 +19,21 @@ import time
 from turtle import bgcolor
 from xml.etree.ElementTree import C14NWriterTarget
 
-#inisialisasi Data dan GUI
-calon = []
+#setting GUI warna dan dimensi
 window_x=960
 window_y=540
-window = Tk()
-window.resizable(width=False, height=False)
-
-#bg = PhotoImage(file = "Tugas Akhir/bg_image.png")
 warnaBG = "#0178ba"
 warnaBox = "#005ea4"
 warnaText = "white"
-warnaButton = "#305F72"
+warnaButton1 = "#305F72"
+warnaButton2 = "#cb185a"
+
+#inisialisasi Data dan GUI
+calon = []
+window = Tk()
+window.resizable(width=False, height=False)
+
+#background UI
 bgimage = PhotoImage(file="Tugas Akhir/bg_image.png")
 bg1 = Label(window, image=bgimage).place(x=0, y=0, relwidth=1, relheight=1)
 
@@ -98,9 +101,9 @@ userInput = StringVar()
 entry = Entry(window,textvariable=userInput, font= "Helvetica 14", bg= warnaBox, fg= warnaText).place(x=140, y=60)
 
 #buttons
-buttonSubmit = Button(window, text="Submit", command=lambda: [stackPush(), tampilData()],font= "Helvetica 11 bold",fg="White", bg="#34495e").place(x=370, y=72, anchor=W)
-buttonPop = Button(window, text= "Pop data", command=lambda: [stackPop(), tampilData()],font= "Helvetica 11 bold",fg="White", bg="#2c3e50").place(x=435, y=72, anchor=W)
-buttonGenerate = Button(window, text="Generate Pemenang", command=lambda: [randomFunction(), tampilData()], font="Helvetica 11 bold", fg="White", bg= "#cb185a")
+buttonSubmit = Button(window, text="Submit", command=lambda: [stackPush(), tampilData()],font= "Helvetica 11 bold",fg="White", bg=warnaButton1).place(x=370, y=72, anchor=W)
+buttonPop = Button(window, text= "Pop data", command=lambda: [stackPop(), tampilData()],font= "Helvetica 11 bold",fg="White", bg=warnaButton1).place(x=435, y=72, anchor=W)
+buttonGenerate = Button(window, text="Generate Pemenang", command=lambda: [randomFunction(), tampilData()], font="Helvetica 11 bold", fg="White", bg=warnaButton2)
 buttonGenerate.place(x=530, y=72, anchor=W)
 
 #tampil Calon Pemenang
